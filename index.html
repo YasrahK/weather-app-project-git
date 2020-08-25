@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather-app</title>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="src/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script src="https://kit.fontawesome.com/b374848779.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <div class="search-bar">
+              <form id="search-city">
+            <input type="text" placeholder="Search place" autocomplete="off" id="input-place" />
+            <input type="submit" value="Search" id="submitCity" />
+          </div>
+          <div col-2>
+              <input type="submit" id="current-location" value="Current Location"
+              class="form-control btn btn-primary shadow" />
+          </div>
+
+          <div class="celcius" >
+            <button type="button" class="btn btn-info" id="celcius">
+              Change to celcius
+            </button>
+            <button type="button" class="btn btn-info btn-fahrenheit" id="fahrenheit">
+              Change to fahrenheit
+            </button>
+  
+          </form>
+          </div>
+          <div class="current">
+            <div class="card" style="width: 90%;">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                     <img src="media/partlycloudy.png" alt="weathernow"/> 
+                  </div>
+                  <div class="col">
+                    <h1>
+                      <span id="city-display"> Chicago  </span>
+                          <br />
+                   <span id="description"> <small> Partly Cloudy </small>
+                  </span>
+                  <br />
+                    <span class="fahrenheit" id="current-temperature">   
+                      </span><span id="weather-unit"> </span>
+                  
+                    </h1>
+                  </div>
+          
+                  <div class="col">
+                    <ul>
+                      <li id="display-date">
+                  Wednesday <br /> 08/02/2020 <br /> 11:00 
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col" id="percipitation">
+                    percipitation <br />
+                    0 in
+                  </div>
+                  <div class="col" id="feels-like">
+                      Feels like <br />
+                      93°
+                    </div>
+                    <div class="col" id="humidity">
+                       Humidity <br />
+                        69%
+                      </div>
+                      <div class="col" id="chance-of-rain">
+                          Chance Of Rain <br />
+                          20%
+                        </div>
+                        <div class="col" id="visibility">
+                            Visibility <br />
+                            10mi
+                          </div>
+                          <div class="col" id="wind-speed">
+                              Wind Speed <br />
+                              11mph
+                            </div>
+                            <div class="col" id="air-quality">
+                                Air Quality <br />
+                               Moderate
+                           </div>   
+            </div>
+            </div>
+          </div>
+          <div class="days">
+              <div class="card" style="width: 90%;">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        Monday
+                      </div>
+                      <div class="col">
+                        Tuesday
+                      </div>
+                      <div class="col">
+                        Wednesday
+                      </div>
+                      <div class="col">
+                        Thursday
+                      </div>
+                      <div class="col">
+                        Friday
+                      </div>
+                      <div class="col">
+                        Saturday
+                      </div>
+                      <div class="col">
+                        Sunday
+                      </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                     <div class="col">
+                      <img src="media/rain.png" /><br /> 80 <br /> 60
+                     </div> 
+                     <div class="col">
+                      <img src="media/sunnyday.png" /> <br /> 84 <br /> 69
+                     </div>
+                     <div class="col">
+                      <img src="media/sunnyday.png" /> <br /> 80 <br /> 69
+                     </div>
+                     <div class="col">
+                      <img src="media/partlycloudy.png" /> <br /> 78 <br /> 67
+                     </div>
+                     <div class="col">
+                      <img src="media/cloudy.png" /> <br /> 76 <br /> 64
+                     </div>
+                     <div class="col">
+                      <img src="media/partlycloudy.png" /> <br /> 80 <br /> 66
+                     </div>
+                     <div class="col">
+                      <img src="media/thunder.png" /> <br /> 78 <br /> 66   
+                     </div>
+                  </div>
+              </div>
+          </div>
+          <div class="hours">
+              <div class="card" style="width: 90%;">
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="col">
+                            Now
+                          </div>
+                          <div class="col">
+                              <img src="media/sunnyday.png" /> 
+                          </div>
+                          <div class="col">
+                            88°
+                          </div>
+                          <div class="col">
+                            <strong> Sunrise </strong>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            11 AM
+                          </div>
+                          <div class="col">
+                              <img src="media/sunnyday.png" /> 
+                            </div>
+                            <div class="col">
+                              90°
+                            </div>
+                            <div class="col">
+                              5:39 AM
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                              1 PM
+                            </div>
+                            <div class="col">
+                                <img src="media/partlycloudy.png" /> 
+                              </div>
+                              <div class="col">
+                                90°
+                              </div>
+                              <div class="col">
+                                  <img src="media/sunrise.png" /> 
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col">
+                                3 PM
+                              </div>
+                              <div class="col">
+                                  <img src="media/partlycloudy.png" /> 
+                                </div>
+                                <div class="col">
+                                  91°
+                                </div>
+                                <div class="col">
+                                    <strong> Sunset </strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                  5 PM
+                                </div>
+                                <div class="col">
+                                    <img src="media/sunnyday.png" /> 
+                                  </div>
+                                  <div class="col">
+                                    90°
+                                  </div>
+                                  <div class="col">
+                                      8:14 PM
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col">
+                                    7 PM
+                                  </div>
+                                  <div class="col">
+                                      <img src="media/partlycloudy.png" /> 
+                                    </div>
+                                    <div class="col">
+                                      88°
+                                    </div>
+                                    <div class="col">
+                                        <img src="media/sunset.png" /> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                      9 PM
+                                    </div>
+                                    <div class="col">
+                                        <img src="media/cloudy.png" /> 
+                                      </div>
+                                      <div class="col">
+                                        84°
+                                      </div>
+                                      <div class="col">
+                                        <br />
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col">
+                                        11 PM
+                                      </div>
+                                      <div class="col">
+                                          <img src="media/rain.png" /> 
+                                        </div>
+                                        <div class="col">
+                                          81°
+                                        </div>
+                                        <div class="col">
+                                            <br />
+                                          </div>
+                                    </div>
+          
+            </div>
+              </div>
+              <div>
+                <br />
+                <p>
+                  Designed by Yasrah Kapadia 
+                </p>
+                
+              
+
+
+          <script src="src/index.js"></script>
+        </div>
+      </div>
+    </div>
+  </body>
