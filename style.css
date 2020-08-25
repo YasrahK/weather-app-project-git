@@ -1,0 +1,73 @@
+body {
+    background-image: url(media/chicago.jpg);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .container {
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  #submitCity {
+    border-radius: 15px;
+    background: rgb(20, 75, 158);
+    color: white;
+  }
+  h1 {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+  .card {
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    text-align: center;
+  }
+  .search-bar {
+    padding: 20px;
+    text-align: center;
+  }
+  .celcius {
+    position: relative;
+    padding: 10px;
+    font-size: 8px;
+    text-align: right;
+  }
+  .current,
+  .days,
+  .hours {
+    padding: 20px;
+    display: block;
+    margin: 0 auto;
+  }
+  .current {
+    text-align: center;
+  }
+  .current img {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+  }
+  .days {
+    margin-top: 10px;
+  }
+  .hours {
+    margin-top: 10px;
+  }
+  .hours img {
+    width: 22px;
+    height: 22px;
+  }
+  li {
+    list-style: none;
+    font-weight: bold;
+  }
+  .btn-fahrenheit {
+    display: none;
+  }
+  
+  #current-location {
+    width: 30%;
+    display: inline-block;
+    padding: 0%;
+  }
+  
